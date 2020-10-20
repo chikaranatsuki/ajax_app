@@ -39,4 +39,4 @@ function check() {
     });
   });
 }
-setInterval(check, 1000);
+SetInterval(check, 1000);
