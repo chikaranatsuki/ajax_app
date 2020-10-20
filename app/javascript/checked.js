@@ -5,7 +5,7 @@ function check() {
      if (post.getAttribute("data-load") != null) {
       return null;
     }
-    post.setAttribute("data-load", "true");
+    post.setAttribute("data-load");
     // メモをクリックした場合に実行する処理を定義している
     post.addEventListener("click", () => {
       // どのメモをクリックしたのか、カスタムデータを利用して取得している
