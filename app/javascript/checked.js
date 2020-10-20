@@ -12,6 +12,7 @@ function check() {
       const postId = post.getAttribute("data-id");
       // Ajaxに必要なオブジェクトを生成している
       const XHR = new XMLHttpRequest();
+      // XMLHttpRequestとは、サーバーにHTTPリクエストを非同期で行うことがでる
       // openでリクエストを初期化する
       XHR.open("GET", `/posts/${postId}`, true);
       // レスポンスのタイプを指定する
@@ -20,6 +21,7 @@ function check() {
       XHR.send();
       // レスポンスを受け取った時の処理を記述する
       XHR.onload = () => {
+        //onload..レスポンスなどの受信が成功した場合に呼び出されるイベントハンドラーのこと
         if (XHR.status != 200) {
           // レスポンスの HTTP ステータスを解析し、該当するエラーメッセージをアラートで表示するようにしている
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
@@ -40,3 +42,5 @@ function check() {
   });
 }
 setInterval(check, 1000);
+// setIntervalとは、一定の間隔（時間）ごとに指定した関数などを実行できるメソッド
+// check関数が1秒に1度実行される
