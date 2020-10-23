@@ -5,7 +5,7 @@ function check() {
      if (post.getAttribute("data-load") != null) {
       return null;
     }
-    post.setAttribute("data-load");
+    post.setAttribute("data-load", "true");
     // メモをクリックした場合に実行する処理を定義している
     post.addEventListener("click", () => {
       // どのメモをクリックしたのか、カスタムデータを利用して取得している
@@ -39,4 +39,4 @@ function check() {
     });
   });
 }
-SetInterval(check, 1000);
+setInterval(check, 1000);
